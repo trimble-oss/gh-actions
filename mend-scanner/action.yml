@@ -1,0 +1,37 @@
+name: "Mend (formerly WhiteSource) Security Scan"
+description: "Run the Mend Unified Agent command-line tool"
+inputs:
+  apiKey:
+    description: "API key from Mend (formerly WhiteSource)."
+    required: true
+  productName:
+    description: "Name of the Product that this project falls under."
+    required: false
+  projectName:
+    description: "Name of the Project. It could be just repository name. Default: Repository Name without owner."
+    required: false
+  configFile:
+    description: "Filename of Mend configuration if being used (including file path)"
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout files
+      uses: actions/checkout@v3
+
+    - name: Run scanner
+      env:
+        WS_API_KEY: ${{inputs.apiKey}}
+        WS_WSS_URL: https://saas.whitesourcesoftware.com/agent
+        WS_PROJECT_NAME: ${{inputs.projectName}}
+        WS_PRODUCT_NAME: ${{inputs.productName}}
+        WS_CONFIG_FILE: ${{inputs.configFile}}
+      run: ${{ github.action_path }}/wss.sh
+      shell: bash
+
+    - name: Scan error
+      if: ${{env.ws_scan_error}}
+      env:
+        MESSAGE: ${{env.ws_scan_error}}
+      run: echo "$MESSAGE" >> "$GITHUB_STEP_SUMMARY"
+      shell: bash
