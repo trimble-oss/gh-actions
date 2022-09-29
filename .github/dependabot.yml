@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    reviewers:
+      - coliff
+      - msankaran0712
+    schedule:
+      interval: weekly
+    labels:
+      - github-actions
+  - package-ecosystem: "github-actions"
+    directory: "/mend-scanner"
+    schedule:
+      interval: "weekly"
