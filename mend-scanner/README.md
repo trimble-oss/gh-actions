@@ -17,10 +17,8 @@ You must have the WhiteSource API key set in your GitHub secrets.
 name: Mend (formerly WhiteSource) Security Scan
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  schedule:
+    - cron: "0 0 1 * *"
 
 jobs:
   build:
@@ -45,10 +43,8 @@ jobs:
 name: Mend (formerly WhiteSource) Security Scan
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  schedule:
+    - cron: "0 0 1 * *"
 
 jobs:
   build:
