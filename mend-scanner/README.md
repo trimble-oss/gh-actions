@@ -68,4 +68,5 @@ For more help on how to create a GitHub Action workflow please refer to [GitHub 
 
 ## Credits
 
-Originally developed by [TheAxZim/Whitesource-Scan-Action](https://github.com/TheAxZim/Whitesource-Scan-Action).
+- [Trimble-Connect whitesource scanner](https://github.com/Trimble-Connect/tc-actions/tree/main/whitesource-scanner).
+- [TheAxZim/Whitesource-Scan-Action](https://github.com/TheAxZim/Whitesource-Scan-Action).
