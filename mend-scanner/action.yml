@@ -14,7 +14,7 @@ inputs:
     description: "Filename of Mend configuration if being used (including file path)"
     required: false
   scan-comment:
-    description: Add an optional scan comment. By default, the action run URL is added.
+    description: Add an optional scan comment.
     required: false
 runs:
   using: "composite"
