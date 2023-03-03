@@ -106,9 +106,9 @@ unset GOROOT
 set +e
 # Execute Unified Agent (2 settings)
 if [ -z  "$WS_CONFIG_FILE" ]; then
-  java -jar wss-unified-agent.jar -noConfig true -apiKey "$WS_API_KEY" -project "$PROJECT_NAME_STR" "$PRODUCT_NAME_STR"\
+  java -jar wss-unified-agent.jar -noConfig true -apiKey "$WS_API_KEY" scanComment "$WS_SCSN_COMMENT" -project "$PROJECT_NAME_STR" "$PRODUCT_NAME_STR"\
     -d . -wss.url "$WS_WSS_URL" -resolveAllDependencies true
 else
-  java -jar wss-unified-agent.jar -apiKey "$WS_API_KEY" -c "$WS_CONFIG_FILE" -d .
+  java -jar wss-unified-agent.jar -apiKey "$WS_API_KEY" -c "$WS_CONFIG_FILE" -scanComment "$WS_SCAN_COMMENT"
 fi
 verifySuccess $?
