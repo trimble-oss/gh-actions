@@ -13,6 +13,9 @@ inputs:
   configFile:
     description: "Filename of Mend configuration if being used (including file path)"
     required: false
+  scan-comment:
+    description: Add an optional scan comment.
+    required: false
 runs:
   using: "composite"
   steps:
@@ -26,6 +29,7 @@ runs:
         WS_PROJECT_NAME: ${{inputs.projectName}}
         WS_PRODUCT_NAME: ${{inputs.productName}}
         WS_CONFIG_FILE: ${{inputs.configFile}}
+        SCAN_COMMENT: ${{inputs.scan-comment}}
       run: ${{ github.action_path }}/wss.sh
       shell: bash
 

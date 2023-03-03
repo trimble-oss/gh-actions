@@ -89,7 +89,6 @@ if [ -n "$WS_PRODUCT_NAME" ]; then
   PRODUCT_NAME_STR="-product $WS_PRODUCT_NAME"
 fi
 
-
 # Download latest Unified Agent release from Whitesource
 curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
 jarSha256=$(curl -sL https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar.sha256)
@@ -106,9 +105,9 @@ unset GOROOT
 set +e
 # Execute Unified Agent (2 settings)
 if [ -z  "$WS_CONFIG_FILE" ]; then
-  java -jar wss-unified-agent.jar -noConfig true -apiKey "$WS_API_KEY" -project "$PROJECT_NAME_STR" "$PRODUCT_NAME_STR"\
+  java -jar wss-unified-agent.jar -scanComment "$SCAN_COMMENT" -noConfig true -apiKey "$WS_API_KEY" -project "$PROJECT_NAME_STR" "$PRODUCT_NAME_STR"\
     -d . -wss.url "$WS_WSS_URL" -resolveAllDependencies true
 else
-  java -jar wss-unified-agent.jar -apiKey "$WS_API_KEY" -c "$WS_CONFIG_FILE" -d .
+  java -jar wss-unified-agent.jar -scanComment "$SCAN_COMMENT" -apiKey "$WS_API_KEY" -c "$WS_CONFIG_FILE" -d .
 fi
 verifySuccess $?
