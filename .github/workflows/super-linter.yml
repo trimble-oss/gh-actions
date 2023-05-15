@@ -30,6 +30,8 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JAVASCRIPT_DEFAULT_STYLE: prettier
+          LOG_LEVEL: NOTICE
+          SUPPRESS_POSSUM: true
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_EDITORCONFIG: false
           VALIDATE_SHELL_SHFMT: false

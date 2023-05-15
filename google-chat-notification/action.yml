@@ -1,0 +1,9 @@
+name: "google-chat-github-notification"
+description: "Google Chat Notification for GitHub Actions"
+inputs:
+  url:
+    description: "Google Chat Webhook URL."
+    required: true
+runs:
+  using: "node16"
+  main: "index.js"
