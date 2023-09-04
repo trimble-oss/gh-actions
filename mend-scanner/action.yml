@@ -20,7 +20,7 @@ runs:
   using: "composite"
   steps:
     - name: Checkout files
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Run scanner
       env:
