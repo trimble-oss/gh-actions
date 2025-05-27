@@ -1,11 +1,5 @@
-# Trimble GitHub actions
+# Trimble GitHub Actions
 
-Common actions for `trimble-oss` repositories.
+This repository is now archived.
 
-## How to write composite actions
-
-See [GitHub documentation on actions](https://docs.github.com/en/actions/creating-actions/about-custom-actions)
-
-Add a folder using the name the action will be used, for example, `mend-scanner` folder contains an action that will be referred to as `trimble-oss/gh-actions/mend-scanner@latest` in workflows.
-
-Add every composite action to [Dependabot configuration](.github/dependabot.yml).
+To use Mend, please use the E-Tools Mend Production GitHub App.
