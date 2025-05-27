@@ -1,4 +1,4 @@
-name: "Mend (formerly WhiteSource) Security Scan"
+name: "Mend Security Scan - DEPRECATED: USE MEND GITHUB APP INSTEAD"
 description: "Run the Mend Unified Agent command-line tool"
 inputs:
   apiKey:
